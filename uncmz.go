@@ -21,7 +21,7 @@ var (
 	fileID  = []byte("Clay")
 	fset    = flag.NewFlagSet(os.Args[0], flag.ExitOnError)
 	arcFile = fset.String("e", "", fmt.Sprintf("The %s file to extract.", ext))
-	dstPath = fset.String("d", "", "Optional output directory to extrac to.")
+	dstPath = fset.String("d", "", "Optional output directory to extract to.")
 )
 
 func errpanic(e error) {
@@ -75,7 +75,7 @@ func main() {
 		errpanic(err)
 
 		if !reflect.DeepEqual(h.id, fileID) {
-			fmt.Fprintf(os.Stderr, "file is not a %s file: %v", ext, err)
+			fmt.Fprintf(os.Stderr, "file is not a %s file", ext)
 			os.Exit(1)
 		}
 
